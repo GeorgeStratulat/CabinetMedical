@@ -1,5 +1,7 @@
 package Services.Auth;
 
+import Services.LoggingService;
+
 import java.util.Scanner;
 
 public class AuthActions {
@@ -16,7 +18,7 @@ public class AuthActions {
         String email = scanner.nextLine();
         System.out.println("Enter password: ");
         String password = scanner.nextLine();
-
+        LoggingService.logAction();
         if (authService.authenticate(email, password)) {
             return email;
         }

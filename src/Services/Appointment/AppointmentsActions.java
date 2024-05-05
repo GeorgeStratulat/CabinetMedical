@@ -2,6 +2,7 @@ package Services.Appointment;
 
 import Models.Appointment;
 import Models.Patient;
+import Services.LoggingService;
 import Services.Patients.PatientsService;
 import Services.Patients.PatientsServiceImpl;
 
@@ -65,6 +66,7 @@ public class AppointmentsActions {
         Appointment appointment = new Appointment(patient.getId(), doctorId, appointmentDate, observations);
         appointmentsService.create(appointment);
         System.out.println("Appointment created!");
+        LoggingService.logAction();
     }
 
     public void listAppointments() {
@@ -73,6 +75,7 @@ public class AppointmentsActions {
         for (Appointment appointment : appointments) {
             System.out.println(appointment.toString());
         }
+        LoggingService.logAction();
     }
 
     public void changeAppointment() {
@@ -112,6 +115,7 @@ public class AppointmentsActions {
         } else {
             System.out.println("Appointment not found!");
         }
+        LoggingService.logAction();
     }
 
     public void cancelAppointment() {
@@ -124,5 +128,6 @@ public class AppointmentsActions {
         } else {
             System.out.println("There was a problem cancelling the appointment");
         }
+        LoggingService.logAction();
     }
 }

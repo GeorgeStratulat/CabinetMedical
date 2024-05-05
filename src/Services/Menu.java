@@ -78,6 +78,7 @@ public class Menu {
                 appointmentsActions.cancelAppointment();
                 break;
             case 7:
+                LoggingService.logAction();
                 System.exit(1);
             default:
                 System.out.println("Invalid choice. Please try again.");

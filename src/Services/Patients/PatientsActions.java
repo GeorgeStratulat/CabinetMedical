@@ -29,6 +29,7 @@ public class PatientsActions {
         Patient patient = new Patient(firstName, lastName, dateOfBirth);
         patientsService.create(patient);
         System.out.println("Patient created!");
+        LoggingService.logAction();
     }
 
     public void listPatients() {
